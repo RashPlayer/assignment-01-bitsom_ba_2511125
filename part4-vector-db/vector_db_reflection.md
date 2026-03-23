@@ -1,0 +1,7 @@
+## Vector DB Use Case
+
+A traditional keyword-based database search would not be enough for this kind of legal system. Keyword searches are very literal; they only return results that contain the exact words typed into the search bar. If a lawyer searches for "termination clauses," a traditional database will blindly look for that exact phrase. However, legal contracts often use variations like "cancellation of agreement," "severance of terms," or "contract expiration." A standard keyword search would completely miss those sections, which could lead to disastrous legal mistakes.
+
+This is exactly where a vector database becomes necessary. Instead of matching specific words, a vector database captures the actual meaning behind the text. To build this system, the firm would break the 500-page contracts down into smaller paragraphs and run them through an embedding model (like the one we used in the Python exercise). This model converts the text into dense lists of numbers, called vectors, that represent the core concepts of the text.
+
+When a lawyer types a plain English question like "What are the termination clauses?", the system converts that question into a vector too. The vector database then calculates the mathematical distance between the question's vector and the contract's vectors. Because "termination" and "cancellation" share the same semantic meaning, they end up close together in the vector space. The database quickly retrieves the correct legal passages regardless of the specific vocabulary used, making the search smart and context-aware.
